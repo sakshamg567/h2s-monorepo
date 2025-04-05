@@ -1,19 +1,14 @@
 const mongoose = require("mongoose");
 
 const QuestionSchema = new mongoose.Schema({
-   questionId: { type: String, required: true },
+   id: { type: String, required: true },
    text: { type: String, required: true },
    marks: { type: Number, required: true },
 });
 
 const RubricSchema = new mongoose.Schema({
    questionId: { type: String, required: true },
-   criteria: [
-      {
-         description: { type: String, required: true },
-         marks: { type: Number, required: true },
-      },
-   ],
+   criteria: {type: String, required: true }
 });
 
 const QuestionPaperSchema = new mongoose.Schema({
