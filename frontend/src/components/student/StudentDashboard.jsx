@@ -3,8 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import StudentSidebar from './StudentSidebar'
 import TestsOverview from './TestsOverview'
 import TestSubmission from './TestSubmission'
-// import Feedback from './Feedback'
-// import Statistics from './Statistics'
+import Feedback from './Feedback'
 
 const StudentDashboard = () => {
    const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -62,8 +61,7 @@ const StudentDashboard = () => {
                      <Route path="/" element={<TestsOverview />} />
                      <Route path="/tests" element={<TestsOverview />} />
                      <Route path="/submit" element={<TestSubmission />} />
-                     {/* <Route path="/feedback" element={<Feedback />} /> */}
-                     {/* <Route path="/statistics" element={<Statistics />} /> */}
+                     <Route path="/feedback" element={<Feedback />} />
                   </Routes>
                </div>
             </main>
