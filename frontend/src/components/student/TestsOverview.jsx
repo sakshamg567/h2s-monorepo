@@ -25,7 +25,7 @@ const TestsOverview = () => {
       ]);
 
       try {
-         const res = await axios.get("http://localhost:3000/api/test/available");
+         const res = await axios.get("/api/test/available");
          setTests(res.data);
       } catch (error) {
          console.error("Failed to fetch tests");
