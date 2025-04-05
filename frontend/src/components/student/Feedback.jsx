@@ -4,12 +4,21 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button"
 import { CalendarIcon, FileText } from "lucide-react"
 import axios from "axios"
+import { useEffect } from "react"
 
 // Sample data - in a real app, you would fetch this from your API
-const res = await axios.get('/api/answer/submitted')
-const submittedTests = res.data
+
 
 function FeedbackPage() {
+   let submittedTests
+   useEffect(() => {
+      const setTests = async() => {
+         const submitted = await axios.get('/api/answer/submitted')
+         submittedTests = submitted.data;
+      }
+      setTests()
+   },[])
+
    return (
       <div className="container mx-auto py-8 px-4">
          <div className="mb-8">
